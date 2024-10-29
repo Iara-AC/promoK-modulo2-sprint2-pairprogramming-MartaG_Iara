@@ -22,10 +22,10 @@ GROUP BY product_id;
 
 
 SELECT product_id, unit_price AS Max_unit_price_sold
-FROM products AS p1
+FROM order_details AS od1
 WHERE unit_price = ( SELECT MAX(unit_price)
-						FROM products AS p2
-						WHERE p1.product_id = p2.product_id);
+						FROM order_details AS od2
+						WHERE od1.product_id = od2.product_id);
                         
 /* 3) Extraed información de los productos "Beverages" */
 
